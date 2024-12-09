@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Data Receiver</title>
+</head>
+<body>
+    <h1>Data from ESP32</h1>
+    <div id="data"></div>
+
+    <script>
+        async function fetchData() {
+            const response = await fetch('http://your-server.com/api/data'); // Replace with your server URL
+            const data = await response.json();
+            document.getElementById('data').innerText = JSON.stringify(data);
+        }
+
+        setInterval(fetchData, 5000); // Fetch data every 5 seconds
+    </script>
+</body>
+</html>
